@@ -3,9 +3,9 @@ import './_index.scss'
 import { FaBars } from 'react-icons/fa'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { MdNotifications, MdApps } from 'react-icons/md'
-import YoutubeLogo from './../../assets/images/logo192.png'
 import Avatar from '@material-ui/core/Avatar'
 import AvatarPic from './../../assets/images/casual-pic.jpg'
+import YoutubeLogo from './../../assets/images/logo192.png'
 
 const Header = ({ handleToggleSidebar }) => {
   return (

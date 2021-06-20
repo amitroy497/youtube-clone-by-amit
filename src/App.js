@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { Container } from 'react-bootstrap'
 import './_app.scss'
 import Header from './components/header'
 import Sidebar from './components/sidebar'
 import HomeScreen from './screens/homeScreen'
 import LoginScreen from './screens/loginScreen'
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom'
+import { Route, Switch, Redirect, useHistory } from 'react-router-dom'
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false)
@@ -35,25 +31,32 @@ const Layout = ({ children }) => {
 }
 
 const App = () => {
+  const { accessToken, loading } = useSelector((state) => state.auth)
+
+  const history = useHistory()
+
+  useEffect(() => {
+    if (!loading && !accessToken) {
+      history.push('/auth')
+    }
+  }, [accessToken, loading, history])
   return (
-    <Router>
-      <Switch>
-        <Route path='/' exact>
-          <Layout>
-            <HomeScreen />
-          </Layout>
-        </Route>
-        <Route path='/auth'>
-          <LoginScreen />
-        </Route>
-        <Route path='/search'>
-          <h1>Search results</h1>
-        </Route>
-        <Route>
-          <Redirect to='/'></Redirect>
-        </Route>
-      </Switch>
-    </Router>
+    <Switch>
+      <Route path='/' exact>
+        <Layout>
+          <HomeScreen />
+        </Layout>
+      </Route>
+      <Route path='/auth'>
+        <LoginScreen />
+      </Route>
+      <Route path='/search'>
+        <h1>Search results</h1>
+      </Route>
+      <Route>
+        <Redirect to='/'></Redirect>
+      </Route>
+    </Switch>
   )
 }
 
