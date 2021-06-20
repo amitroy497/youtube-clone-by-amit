@@ -1,0 +1,44 @@
+$text-color: #b1bdb4;
+
+$black-primary: #16181b;
+$black-secondary: #121417;
+
+$border-color: #4c4c4c;
+
+$breakpoint-medium: 1224px;
+$breakpoint-small: 520px;
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/roboto/Roboto-Regular.eot');
+  src: url('./assets/fonts/roboto/Roboto-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('./assets/fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+    url('./assets/fonts/roboto/Roboto-Regular.woff') format('woff'),
+    url('./assets/fonts/roboto/Roboto-Regular.svg#Roboto-Regular') format('svg');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $black-primary;
+  background-attachment: fixed;
+  color: $text-color;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.1px;
+}
+
+@mixin line-clamp($number) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
