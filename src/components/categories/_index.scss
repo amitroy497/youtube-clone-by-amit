@@ -1,11 +1,15 @@
 @import '../../base';
 
 .CategoriesBar {
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 0 0;
   font-size: 0.8rem;
 
   display: flex;
   overflow-x: scroll;
+  position: sticky;
+  top: 60px;
+  z-index: 999;
+  background: $black-primary;
 
   &::-webkit-scrollbar {
     width: 0;

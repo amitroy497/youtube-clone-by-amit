@@ -4,8 +4,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 2rem 3rem;
   background: $black-primary;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 
   &_menu {
     display: none;
