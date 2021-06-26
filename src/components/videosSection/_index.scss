@@ -9,15 +9,16 @@
 
   cursor: pointer;
 
-  &__top {
+  &_top {
     margin-bottom: 0.5rem;
     position: relative;
+
     img {
       width: 100%;
     }
+
     span {
       position: absolute;
-
       bottom: 0.3rem;
       right: 0.3rem;
 
@@ -27,18 +28,18 @@
     }
   }
 
-  &__title {
+  &_title {
     margin-bottom: 0.1rem;
 
     color: #fff;
     @include line-clamp(1);
   }
 
-  &__details {
+  &_details {
     display: flex;
     align-items: center;
   }
-  &__channel {
+  &_channel {
     display: flex;
     align-items: center;
     margin: 0.5rem 0;
